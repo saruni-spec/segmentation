@@ -1,7 +1,7 @@
 Flask
 flask-cors
 geopandas
-samgeo
+segment-geospatial
 leafmap
 numpy
 sqlalchemy
