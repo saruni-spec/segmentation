@@ -9,7 +9,8 @@ import numpy as np
 from sqlalchemy import create_engine
 
 # ---------- CONFIGURATION ----------
-DB_URL = "postgresql://postgres:Statsspeak@123@db.ounttrkvhnvhzfgtyklo.supabase.co:5432/postgres"  # Replace with actual creds
+DB_URL = os.getenv("DB_URL")
+
 engine = create_engine(DB_URL)
 
 app = Flask(__name__)
@@ -82,5 +83,8 @@ def segment():
         return jsonify({"error": str(e)}), 500
 
 # ---------- MAIN ----------
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+

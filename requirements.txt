@@ -1,0 +1,9 @@
+Flask
+flask-cors
+geopandas
+samgeo
+leafmap
+numpy
+sqlalchemy
+psycopg2-binary
+gunicorn
